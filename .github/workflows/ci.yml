@@ -1,0 +1,17 @@
+name: Production Release (Manual Approval)
+
+on:
+  push:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment:
+      name: production   # configure required reviewers in GitHub Environments
+    steps:
+      - name: Release
+        run: echo "Production release approved and executed"
